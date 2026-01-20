@@ -1,0 +1,82 @@
+/* Responsive Styles */
+
+/* Tablet Styles (968px and below) */
+@media (max-width: 968px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .hero-right {
+        position: relative;
+        top: 0;
+    }
+
+    .hero-name {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero-headline {
+        font-size: 1.25rem;
+    }
+
+    .calendly-inline-widget {
+        height: 600px;
+    }
+}
+
+/* Mobile Styles (640px and below) */
+@media (max-width: 640px) {
+    .portfolio {
+        padding: var(--spacing-md);
+    }
+
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero-name {
+        font-size: 1.75rem;
+    }
+
+    .hero-headline {
+        font-size: 1.125rem;
+    }
+
+    .hero-subtext {
+        font-size: var(--font-size-sm);
+    }
+
+    .calendar-card {
+        padding: var(--spacing-lg);
+    }
+
+    .calendar-title {
+        font-size: 1.25rem;
+    }
+
+    .calendly-inline-widget {
+        height: 550px;
+    }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .avatar-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-name {
+        font-size: 1.5rem;
+    }
+
+    .calendly-inline-widget {
+        min-width: 280px;
+        height: 500px;
+    }
+
+    .calendar-card {
+        padding: var(--spacing-md);
+    }
+}
