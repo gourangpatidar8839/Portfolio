@@ -1,0 +1,68 @@
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { MustardBlob, PeachBlob, MintBlob } from "@/components/DecorativeShapes";
+
+export function Hero() {
+  return (
+    <section className="relative overflow-hidden">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-32 pb-20 md:grid-cols-12 md:gap-8 md:pt-40 md:pb-28">
+        {/* Text */}
+        <div className="md:col-span-7">
+          <p className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-bg/60 px-3 py-1 text-xs font-bold uppercase tracking-tight text-ink/70">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+            Available for AI / ML projects
+          </p>
+
+          <h1 className="headline mt-5 text-[clamp(2.75rem,8vw,5.5rem)] text-ink">
+            Hi, I&rsquo;m Gourang.
+            <br />
+            <span className="text-ink">I build with </span>
+            <span className="relative inline-block">
+              <span className="relative z-10">AI</span>
+              <span
+                aria-hidden
+                className="absolute inset-x-0 bottom-1 -z-0 h-[0.45em] bg-brand"
+              />
+            </span>
+            <span className="text-ink">.</span>
+          </h1>
+
+          <p className="mt-6 max-w-xl text-lg text-ink/80 md:text-xl">
+            Building intelligent systems with Python and LLMs. I help startups
+            and teams ship AI features that actually work in production.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Button href="/projects" size="lg">
+              See my work <ArrowRight size={18} />
+            </Button>
+            <Button href="/#contact" size="lg" variant="ghost">
+              Get in touch
+            </Button>
+          </div>
+        </div>
+
+        {/* Photo + decorations */}
+        <div className="md:col-span-5">
+          <div className="relative mx-auto aspect-square w-full max-w-md">
+            <PeachBlob className="-top-4 -left-4 h-24 w-24 md:h-32 md:w-32" />
+            <MintBlob className="-bottom-6 -right-2 h-20 w-20 md:h-28 md:w-28" />
+            <MustardBlob className="top-1/2 -right-6 h-10 w-10" />
+
+            <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border-4 border-ink bg-mint shadow-[8px_8px_0_0_var(--color-ink)]">
+              <Image
+                src="/images/me.jpg"
+                alt="Gourang Patidar"
+                fill
+                priority
+                sizes="(min-width: 768px) 400px, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

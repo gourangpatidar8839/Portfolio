@@ -1,0 +1,30 @@
+---
+title: "Shipping RAG that actually works in production"
+summary: "What I learned moving a retrieval pipeline from a notebook demo to a system 50 people rely on every day."
+date: "2026-04-12"
+tags: ["RAG", "Production"]
+---
+
+The notebook version worked great. The production version is what taught me anything.
+
+## The honest gap between demo and production
+
+Most RAG demos answer questions on a curated 50-document corpus where every document is roughly the same shape. Production systems answer questions on tens of thousands of documents that are PDFs, Notion exports, transcripts, and legacy wiki pages — none of which agree on what a "document" even means.
+
+Three things broke first when we scaled up:
+
+- **Chunking.** Naive 1024-token chunks split tables and code blocks down the middle. The model couldn't reason about anything that crossed a chunk boundary.
+- **Retrieval ranking.** Cosine similarity on dense embeddings retrieved "vibes" matches that were tangentially related. Real questions needed exact-keyword recall too.
+- **Drift.** Quality silently degraded every time we swapped the embedding model "to test something." We had no eval harness to catch it.
+
+## What actually helped
+
+1. **Hybrid retrieval.** BM25 + dense embeddings, then a cross-encoder rerank. Worth the extra ~100ms.
+2. **Semantic chunking.** Respect markdown headings, tables, and code blocks as atomic units. Smaller chunks for prose, larger for code.
+3. **A boring eval set.** ~200 question/answer pairs we hand-graded. Run on every PR.
+
+> The unsexy stuff is what made the AI feature feel "smart."
+
+## What I'd do differently
+
+If I started over, I'd build the eval harness *first* — before any retrieval code — and let it dictate every architectural choice. We spent two weeks rewriting things we could've been confident about from day one.
