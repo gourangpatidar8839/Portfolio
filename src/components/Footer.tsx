@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { LinkedInIcon, XIcon } from "@/components/ui/BrandIcons";
@@ -12,9 +13,15 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <span
                 aria-hidden
-                className="grid h-9 w-9 place-items-center rounded-full bg-brand text-ink text-sm font-extrabold"
+                className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-brand"
               >
-                GP
+                <Image
+                  src="/images/me.jpg"
+                  alt=""
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
               </span>
               <span className="text-lg font-extrabold tracking-tight">
                 {SITE.name}
@@ -37,8 +44,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/products" className="hover:text-brand transition">
+                  Products
+                </Link>
+              </li>
+              <li>
                 <Link href="/projects" className="hover:text-brand transition">
-                  Work
+                  Projects
                 </Link>
               </li>
               <li>

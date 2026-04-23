@@ -14,7 +14,7 @@ export function PostCard({ post }: { post: Post }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block rounded-2xl border border-ink/10 bg-bg p-6 transition hover:border-ink/40 hover:shadow-[4px_4px_0_0_var(--color-ink)]"
+      className="group block rounded-2xl border border-ink/10 bg-bg p-6 transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]"
     >
       <div className="flex items-center justify-between gap-4">
         <time className="text-xs font-bold uppercase tracking-tight text-ink/60">

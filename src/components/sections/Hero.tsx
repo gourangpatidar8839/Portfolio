@@ -10,14 +10,17 @@ export function Hero() {
         {/* Text */}
         <div className="md:col-span-7">
           <p className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-bg/60 px-3 py-1 text-xs font-bold uppercase tracking-tight text-ink/70">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Available for AI / ML projects
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+            </span>
+            Founder · TheQuickAI &amp; Lumira
           </p>
 
           <h1 className="headline mt-5 text-[clamp(2.75rem,8vw,5.5rem)] text-ink">
             Hi, I&rsquo;m Gourang.
             <br />
-            <span className="text-ink">I build with </span>
+            <span className="text-ink">I ship with </span>
             <span className="relative inline-block">
               <span className="relative z-10">AI</span>
               <span
@@ -29,8 +32,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-ink/80 md:text-xl">
-            Building intelligent systems with Python and LLMs. I help startups
-            and teams ship AI features that actually work in production.
+            AI/ML engineer building intelligent systems with Python and LLMs.
+            Currently shipping <em>TheQuickAI</em> and <em>Lumira</em> — two AI
+            products live in production.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -50,14 +54,14 @@ export function Hero() {
             <MintBlob className="-bottom-6 -right-2 h-20 w-20 md:h-28 md:w-28" />
             <MustardBlob className="top-1/2 -right-6 h-10 w-10" />
 
-            <div className="relative h-full w-full overflow-hidden rounded-[2.5rem] border-4 border-ink bg-mint shadow-[8px_8px_0_0_var(--color-ink)]">
+            <div className="group relative h-full w-full overflow-hidden rounded-[2.5rem] border-4 border-ink bg-mint shadow-[8px_8px_0_0_var(--color-ink)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0_0_var(--color-ink)]">
               <Image
                 src="/images/me.jpg"
                 alt="Gourang Patidar"
                 fill
                 priority
                 sizes="(min-width: 768px) 400px, 90vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
             </div>
           </div>

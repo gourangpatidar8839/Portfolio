@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -7,8 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/projects", label: "Work" },
+  { href: "/products", label: "Products" },
+  { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -39,9 +40,15 @@ export function PillNav() {
           >
             <span
               aria-hidden
-              className="grid h-7 w-7 place-items-center rounded-full bg-ink text-bg text-xs font-extrabold"
+              className="relative h-8 w-8 overflow-hidden rounded-full ring-2 ring-ink/10"
             >
-              GP
+              <Image
+                src="/images/me.jpg"
+                alt=""
+                fill
+                sizes="32px"
+                className="object-cover"
+              />
             </span>
             <span className="hidden sm:inline">Gourang</span>
           </Link>

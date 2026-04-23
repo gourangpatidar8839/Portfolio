@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { JsonLd, personSchema, websiteSchema } from "@/components/JsonLd";
+import { BackToTop } from "@/components/ui/BackToTop";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,7 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <JsonLd data={[personSchema(), websiteSchema()]} />
         {children}
+        <BackToTop />
         <Analytics />
       </body>
     </html>

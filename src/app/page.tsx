@@ -1,6 +1,7 @@
 import { PillNav } from "@/components/nav/PillNav";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { Products } from "@/components/sections/Products";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
@@ -14,6 +15,7 @@ export default function Home() {
       <PillNav />
       <main className="flex-1">
         <Hero />
+        <Products />
         <About />
         <Skills />
         <FeaturedProjects />

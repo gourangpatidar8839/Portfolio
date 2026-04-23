@@ -6,6 +6,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { PillNav } from "@/components/nav/PillNav";
 import { Footer } from "@/components/Footer";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { JsonLd, articleSchema } from "@/components/JsonLd";
 import { getMDXPost, getMDXPostSlugs } from "@/lib/mdx";
 import { getPost } from "@/lib/posts";
 
@@ -54,9 +55,13 @@ export default async function PostPage({
   const title = mdx?.frontmatter.title ?? fallback!.title;
   const date = mdx?.frontmatter.date ?? fallback!.date;
   const tags = mdx?.frontmatter.tags ?? fallback!.tags;
+  const summary = mdx?.frontmatter.summary ?? fallback?.summary ?? "";
 
   return (
     <>
+      <JsonLd
+        data={articleSchema({ title, description: summary, date, slug, tags })}
+      />
       <PillNav />
       <main className="flex-1 pt-32 pb-24">
         <article className="mx-auto max-w-2xl px-6">

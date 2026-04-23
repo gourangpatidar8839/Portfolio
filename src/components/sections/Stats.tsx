@@ -6,19 +6,19 @@ type Stat = {
 
 const stats: Stat[] = [
   {
-    value: "5+",
-    label: "Projects shipped",
-    detail: "From RAG systems to agents to internal ML tools.",
+    value: "2",
+    label: "Products shipped",
+    detail: "TheQuickAI and Lumira — both live in production.",
   },
   {
     value: "10k+",
-    label: "Documents indexed",
-    detail: "Across the retrieval pipelines I&rsquo;ve built in production.",
+    label: "Creators using my work",
+    detail: "Across Lumira&rsquo;s India-first AI content studio.",
   },
   {
-    value: "2 yrs",
-    label: "Building with LLMs",
-    detail: "Since the GPT-3.5 era — through every model migration.",
+    value: "500k+",
+    label: "AI generations served",
+    detail: "Images and videos produced through my systems to date.",
   },
 ];
 
