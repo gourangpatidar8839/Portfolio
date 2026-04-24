@@ -25,7 +25,7 @@ const stats: Stat[] = [
 export function Stats() {
   return (
     <section className="bg-brand">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-5">
             <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
@@ -41,11 +41,11 @@ export function Stats() {
             </p>
           </div>
 
-          <div className="md:col-span-7 grid gap-5 sm:grid-cols-3">
+          <div className="md:col-span-7 grid gap-4 grid-cols-1 sm:grid-cols-3 sm:gap-5">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-ink/15 bg-bg/40 p-6"
+                className="rounded-2xl border border-ink/15 bg-bg/40 p-6 transition hover:border-ink/40 hover:shadow-[6px_6px_0_0_var(--color-ink)]"
               >
                 <div className="text-5xl font-extrabold tracking-tight text-ink md:text-6xl">
                   {s.value}

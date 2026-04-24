@@ -4,7 +4,7 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-24">
       <DashedDivider className="mt-4" />
-      <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-4xl px-5 py-16 sm:px-6 sm:py-24 md:py-32">
         <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
           About
         </p>

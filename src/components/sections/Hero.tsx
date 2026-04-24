@@ -6,7 +6,7 @@ import { MustardBlob, PeachBlob, MintBlob } from "@/components/DecorativeShapes"
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-32 pb-20 md:grid-cols-12 md:gap-8 md:pt-40 md:pb-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-5 pt-28 pb-16 sm:px-6 sm:gap-12 md:grid-cols-12 md:gap-8 md:pt-40 md:pb-28">
         {/* Text */}
         <div className="md:col-span-7">
           <p className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-bg/60 px-3 py-1 text-xs font-bold uppercase tracking-tight text-ink/70">
@@ -49,10 +49,10 @@ export function Hero() {
 
         {/* Photo + decorations */}
         <div className="md:col-span-5">
-          <div className="relative mx-auto aspect-square w-full max-w-md">
-            <PeachBlob className="-top-4 -left-4 h-24 w-24 md:h-32 md:w-32" />
-            <MintBlob className="-bottom-6 -right-2 h-20 w-20 md:h-28 md:w-28" />
-            <MustardBlob className="top-1/2 -right-6 h-10 w-10" />
+          <div className="relative mx-auto aspect-square w-full max-w-[18rem] sm:max-w-sm md:max-w-md">
+            <PeachBlob className="-top-3 -left-3 h-16 w-16 sm:-top-4 sm:-left-4 sm:h-24 sm:w-24 md:h-32 md:w-32" />
+            <MintBlob className="-bottom-4 -right-2 h-14 w-14 sm:-bottom-6 sm:h-20 sm:w-20 md:h-28 md:w-28" />
+            <MustardBlob className="top-1/2 -right-4 h-8 w-8 sm:-right-6 sm:h-10 sm:w-10" />
 
             <div className="group relative h-full w-full overflow-hidden rounded-[2.5rem] border-4 border-ink bg-mint shadow-[8px_8px_0_0_var(--color-ink)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0_0_var(--color-ink)]">
               <Image

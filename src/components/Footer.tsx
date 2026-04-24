@@ -7,7 +7,7 @@ import { SITE } from "@/lib/utils";
 export function Footer() {
   return (
     <footer className="bg-ink-deep text-bg">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-14 md:py-20">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-6">
             <div className="flex items-center gap-3">

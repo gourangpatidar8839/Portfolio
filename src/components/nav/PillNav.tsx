@@ -24,23 +24,39 @@ export function PillNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-4 sm:pt-4">
       <nav
         className={cn(
-          "w-full max-w-3xl rounded-full border border-line/80 bg-bg/80 backdrop-blur-md transition-all duration-300",
-          scrolled ? "shadow-[0_8px_24px_-12px_rgba(31,45,79,0.18)]" : ""
+          "w-full max-w-3xl rounded-full border border-line/80 bg-bg/85 backdrop-blur-md transition-all duration-300",
+          scrolled
+            ? "shadow-[0_8px_24px_-12px_rgba(31,45,79,0.18)]"
+            : ""
         )}
       >
-        <div className="flex items-center justify-between gap-3 px-3 py-2 md:px-4">
+        <div className="flex items-center justify-between gap-2 px-2 py-2 sm:gap-3 sm:px-3 md:px-4">
+          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 px-2 font-extrabold tracking-tight text-ink"
+            className="flex min-w-0 items-center gap-2 px-1 font-extrabold tracking-tight text-ink sm:px-2"
             aria-label="Gourang Patidar — Home"
+            onClick={() => setOpen(false)}
           >
             <span
               aria-hidden
-              className="relative h-8 w-8 overflow-hidden rounded-full ring-2 ring-ink/10"
+              className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full ring-2 ring-ink/10"
             >
               <Image
                 src="/images/me.jpg"
@@ -50,9 +66,10 @@ export function PillNav() {
                 className="object-cover"
               />
             </span>
-            <span className="hidden sm:inline">Gourang</span>
+            <span className="hidden truncate sm:inline">Gourang</span>
           </Link>
 
+          {/* Desktop links */}
           <ul className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
               <li key={l.href}>
@@ -66,49 +83,100 @@ export function PillNav() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-2">
-            <Button href="/#contact" size="md" className="hidden sm:inline-flex">
+          {/* Right cluster */}
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <Button
+              href="/#contact"
+              size="md"
+              className="hidden md:inline-flex"
+            >
               Get in touch
             </Button>
             <button
               type="button"
-              className="grid h-10 w-10 place-items-center rounded-full bg-ink/5 text-ink md:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full bg-ink/5 text-ink active:bg-ink/10 transition md:hidden"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
+              aria-controls="mobile-menu"
               onClick={() => setOpen((v) => !v)}
             >
-              {open ? <X size={18} /> : <Menu size={18} />}
+              {open ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
+      </nav>
 
-        {open && (
-          <div className="md:hidden border-t border-line/80 px-3 py-3">
-            <ul className="flex flex-col gap-1">
-              {links.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="block rounded-2xl px-3 py-2 text-sm font-bold text-ink hover:bg-line/60"
-                    onClick={() => setOpen(false)}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-1">
-                <Button
-                  href="/#contact"
-                  size="md"
-                  className="w-full"
+      {/* Mobile full-screen menu */}
+      {open && (
+        <div
+          id="mobile-menu"
+          className="fixed inset-0 top-[68px] z-40 flex flex-col bg-bg px-6 pb-12 pt-6 md:hidden"
+        >
+          <ul className="flex flex-col gap-1">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="flex items-center justify-between rounded-2xl border border-ink/10 bg-bg px-5 py-5 text-2xl font-extrabold tracking-tight text-ink transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]"
+                  onClick={() => setOpen(false)}
                 >
-                  Get in touch
-                </Button>
+                  {l.label}
+                  <span aria-hidden className="text-brand">
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8">
+            <Button
+              href="/#contact"
+              size="lg"
+              className="w-full"
+              onClick={() => setOpen(false)}
+            >
+              Get in touch
+            </Button>
+          </div>
+
+          <div className="mt-auto pt-10 text-sm text-ink/60">
+            <p className="font-bold uppercase tracking-tight text-ink/50">
+              Elsewhere
+            </p>
+            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/gourang-patidar/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-bold hover:text-brand transition"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://x.com/GourangPatidar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-bold hover:text-brand transition"
+                >
+                  Twitter / X
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:gourangpatidar2003@gmail.com"
+                  className="font-bold hover:text-brand transition"
+                >
+                  Email
+                </a>
               </li>
             </ul>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
     </header>
   );
 }

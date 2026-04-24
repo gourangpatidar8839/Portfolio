@@ -49,6 +49,30 @@ Live: https://gourangpatidar.com
 - **CTAs:** Inter weight **700**, occasionally UPPERCASE
 - Optional accent: an *italic* phrase in the tagline for emphasis
 
+### Hover convention (apply consistently sitewide)
+**Every card-like surface uses the SAME offset-shadow hover effect.** Don't invent new ones.
+
+```
+transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]
+```
+
+Applies to: Product cards, Project cards, Blog post cards, Skills group cards, Stats cards — anywhere with `rounded-* border border-ink/*`. The border alpha can step `/30` or `/40` depending on contrast, but the shadow is always `6px 6px 0 0 var(--color-ink)`.
+
+**Hero photo** uses an amplified version (it's the centerpiece):
+```
+shadow-[8px_8px_0_0_var(--color-ink)] transition-all duration-200
+hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0_0_var(--color-ink)]
+```
+Plus inner image gets a subtle `group-hover:scale-[1.03]`.
+
+**Buttons** keep their distinct "press down" effect (shadow compresses on hover) — that's a button affordance, not a card hover. Don't unify these.
+
+**Nav pill links** use `hover:bg-line/60` — too small for an offset shadow.
+
+**`BackToTop`** floating button uses brand-colored offset shadow — signals "action".
+
+When adding any new card: copy the hover line above. When in doubt, match the Featured Product Card.
+
 ### Section-by-Section Color Plan
 | # | Section | Background |
 |---|---|---|

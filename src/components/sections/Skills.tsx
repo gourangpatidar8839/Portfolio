@@ -25,8 +25,8 @@ const groups: Group[] = [
 export function Skills() {
   return (
     <section id="skills" className="scroll-mt-24">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="rounded-[2rem] bg-mint p-8 md:p-14">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24 md:py-32">
+        <div className="rounded-[2rem] bg-mint p-6 sm:p-8 md:p-14">
           <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
@@ -45,7 +45,7 @@ export function Skills() {
             {groups.map((g) => (
               <div
                 key={g.title}
-                className="rounded-2xl border border-ink/10 bg-bg/70 p-5"
+                className="rounded-2xl border border-ink/10 bg-bg/70 p-5 transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]"
               >
                 <h3 className="text-xs font-bold uppercase tracking-tight text-ink/60">
                   {g.title}

@@ -4,8 +4,8 @@ import { NewsletterForm } from "@/components/forms/NewsletterForm";
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="rounded-[2rem] bg-peach p-8 md:p-14">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24 md:py-32">
+        <div className="rounded-[2rem] bg-peach p-6 sm:p-8 md:p-14">
           <div className="grid gap-12 md:grid-cols-12">
             {/* Newsletter */}
             <div className="md:col-span-5">

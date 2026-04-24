@@ -47,8 +47,8 @@ export default async function ProductPage({
         })}
       />
       <PillNav />
-      <main className="flex-1 pt-32 pb-24">
-        <article className="mx-auto max-w-3xl px-6">
+      <main className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
+        <article className="mx-auto max-w-3xl px-5 sm:px-6">
           <Link
             href="/products"
             className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-tight text-ink/60 hover:text-ink transition"

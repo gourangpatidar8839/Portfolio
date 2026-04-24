@@ -8,7 +8,7 @@ export function Products() {
 
   return (
     <section id="products" className="scroll-mt-24">
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24 md:py-28">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-bold uppercase tracking-tight text-ink/60">

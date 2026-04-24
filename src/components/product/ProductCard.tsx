@@ -55,7 +55,7 @@ function PreviewSurface({ product }: { product: Product }) {
 
 export function FeaturedProductCard({ product }: { product: Product }) {
   return (
-    <article className="group rounded-[2rem] border border-ink/10 bg-bg p-6 md:p-8 transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]">
+    <article className="group rounded-[2rem] border border-ink/10 bg-bg p-5 sm:p-6 md:p-8 transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]">
       <Link href={`/products/${product.slug}`} className="block">
         <PreviewSurface product={product} />
       </Link>

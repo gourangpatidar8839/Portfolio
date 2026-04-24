@@ -17,7 +17,7 @@ export function FeaturedProjectCard({
     <Link
       href={`/projects/${project.slug}`}
       className={cn(
-        "group block rounded-[2rem] border border-ink/10 p-7 md:p-9 transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]",
+        "group block rounded-[2rem] border border-ink/10 p-6 sm:p-7 md:p-9 transition hover:border-ink/30 hover:shadow-[6px_6px_0_0_var(--color-ink)]",
         accent
       )}
     >
