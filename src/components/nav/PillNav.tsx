@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -107,11 +108,16 @@ export function PillNav() {
       </nav>
 
       {/* Mobile full-screen menu */}
-      {open && (
-        <div
-          id="mobile-menu"
-          className="fixed inset-0 top-[68px] z-40 flex flex-col bg-bg px-6 pb-12 pt-6 md:hidden"
-        >
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            className="fixed inset-0 top-[68px] z-40 flex flex-col bg-bg px-6 pb-12 pt-6 md:hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
           <ul className="flex flex-col gap-1">
             {links.map((l) => (
               <li key={l.href}>
@@ -175,8 +181,9 @@ export function PillNav() {
               </li>
             </ul>
           </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

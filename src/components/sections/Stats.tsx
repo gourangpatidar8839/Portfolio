@@ -1,3 +1,5 @@
+import { FadeIn, Stagger, StaggerItem } from "@/components/motion/FadeIn";
+
 type Stat = {
   value: string;
   label: string;
@@ -27,7 +29,7 @@ export function Stats() {
     <section className="bg-brand">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-20 md:py-28">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
-          <div className="md:col-span-5">
+          <FadeIn className="md:col-span-5">
             <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
               Why work with me
             </p>
@@ -39,11 +41,15 @@ export function Stats() {
               evals, latency budgets, cost ceilings, the boring parts that make
               AI features actually ship.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="md:col-span-7 grid gap-4 grid-cols-1 sm:grid-cols-3 sm:gap-5">
+          <Stagger
+            className="md:col-span-7 grid gap-4 grid-cols-1 sm:grid-cols-3 sm:gap-5"
+            stagger={0.1}
+            initialDelay={0.1}
+          >
             {stats.map((s) => (
-              <div
+              <StaggerItem
                 key={s.label}
                 className="rounded-2xl border border-ink/15 bg-bg/40 p-6 transition hover:border-ink/40 hover:shadow-[6px_6px_0_0_var(--color-ink)]"
               >
@@ -57,9 +63,9 @@ export function Stats() {
                   className="mt-2 text-sm text-ink/70"
                   dangerouslySetInnerHTML={{ __html: s.detail }}
                 />
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </div>
     </section>

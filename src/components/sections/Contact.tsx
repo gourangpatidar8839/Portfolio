@@ -1,10 +1,12 @@
 import { ContactForm } from "@/components/forms/ContactForm";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { FadeIn } from "@/components/motion/FadeIn";
 
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24 md:py-32">
+        <FadeIn>
         <div className="rounded-[2rem] bg-peach p-6 sm:p-8 md:p-14">
           <div className="grid gap-12 md:grid-cols-12">
             {/* Newsletter */}
@@ -38,6 +40,7 @@ export function Contact() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );
