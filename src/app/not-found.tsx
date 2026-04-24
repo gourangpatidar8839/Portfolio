@@ -14,7 +14,7 @@ export default function NotFound() {
   return (
     <>
       <PillNav />
-      <main className="relative flex-1 overflow-hidden">
+      <main id="main" className="relative flex-1 overflow-hidden">
         <PeachBlob className="-top-12 -left-10 h-40 w-40 opacity-70" />
         <MintBlob className="top-32 -right-12 h-44 w-44 opacity-70" />
         <MustardBlob className="bottom-24 left-1/3 h-24 w-24 opacity-60" />

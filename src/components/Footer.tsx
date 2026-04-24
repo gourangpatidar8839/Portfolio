@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { LinkedInIcon, XIcon } from "@/components/ui/BrandIcons";
+import { RssIcon } from "@/components/ui/RssIcon";
 import { SITE } from "@/lib/utils";
 
 export function Footer() {
@@ -97,6 +98,16 @@ export function Footer() {
                   className="inline-flex items-center gap-2 text-bg/90 hover:text-brand transition"
                 >
                   <Mail size={16} /> Email
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/feed.xml"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-bg/90 hover:text-brand transition"
+                >
+                  <RssIcon size={16} /> RSS
                 </a>
               </li>
             </ul>

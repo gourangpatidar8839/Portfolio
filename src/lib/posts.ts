@@ -21,7 +21,7 @@ export const posts: Post[] = [
     slug: "building-an-eval-harness",
     title: "Building an eval harness before you build the agent",
     summary:
-      "If you can&rsquo;t measure it, you can&rsquo;t improve it. A practical setup for evaluating LLM pipelines without going crazy.",
+      "If you can’t measure it, you can’t improve it. A practical setup for evaluating LLM pipelines without going crazy.",
     date: "2026-03-28",
     tags: ["Evals", "LLM"],
   },

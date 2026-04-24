@@ -63,7 +63,7 @@ export default async function PostPage({
         data={articleSchema({ title, description: summary, date, slug, tags })}
       />
       <PillNav />
-      <main className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
+      <main id="main" className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
         <article className="mx-auto max-w-2xl px-5 sm:px-6">
           <Link
             href="/blog"

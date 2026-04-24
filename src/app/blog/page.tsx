@@ -5,6 +5,7 @@ import { PostCard } from "@/components/blog/PostCard";
 import { getAllMDXPosts } from "@/lib/mdx";
 import { posts as fallbackPosts, type Post } from "@/lib/posts";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { RssIcon } from "@/components/ui/RssIcon";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -29,17 +30,39 @@ export default function BlogPage() {
   return (
     <>
       <PillNav />
-      <main className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
+      <main id="main" className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
         <section className="mx-auto max-w-6xl px-5 sm:px-6">
-          <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
-            Writing
-          </p>
-          <h1 className="headline mt-4 text-5xl md:text-7xl">
-            Notes from the build.
-          </h1>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
+                Writing
+              </p>
+              <h1 className="headline mt-4 text-5xl md:text-7xl">
+                Notes from the build.
+              </h1>
+            </div>
+            <a
+              href="/feed.xml"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Subscribe via RSS"
+              title="Subscribe via RSS"
+              className="mt-2 hidden h-11 w-11 shrink-0 place-items-center rounded-full border border-ink/15 bg-bg text-ink/70 transition hover:border-ink/30 hover:text-ink hover:shadow-[6px_6px_0_0_var(--color-ink)] sm:grid"
+            >
+              <RssIcon size={18} />
+            </a>
+          </div>
           <p className="mt-5 max-w-2xl text-lg text-ink/80">
             Practical write-ups on LLMs, retrieval, evals, and the boring
-            infrastructure that makes AI features actually ship.
+            infrastructure that makes AI features actually ship.{" "}
+            <a
+              href="/feed.xml"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 font-bold underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover sm:hidden"
+            >
+              <RssIcon size={14} /> RSS
+            </a>
           </p>
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

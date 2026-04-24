@@ -14,7 +14,7 @@ export default function ProductsPage() {
   return (
     <>
       <PillNav />
-      <main className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
+      <main id="main" className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
         <section className="mx-auto max-w-6xl px-5 sm:px-6">
           <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
             Products
