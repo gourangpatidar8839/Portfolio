@@ -7,20 +7,20 @@ type Group = {
 
 const groups: Group[] = [
   {
-    title: "Languages",
-    items: ["Python", "TypeScript", "SQL", "Bash"],
+    title: "Automation",
+    items: ["n8n", "Make", "Zapier", "Webhooks", "Python"],
   },
   {
-    title: "AI / ML",
-    items: ["PyTorch", "LangChain", "LlamaIndex", "OpenAI", "Anthropic", "RAG", "Embeddings", "Evals"],
+    title: "AI & LLMs",
+    items: ["OpenAI", "Claude", "AI Agents", "Pinecone", "RAG"],
   },
   {
-    title: "Backend",
-    items: ["FastAPI", "Postgres", "Redis", "Celery", "Docker"],
+    title: "Lead Gen & Outreach",
+    items: ["Apollo", "Apify", "Brightdata", "Smartlead", "Instantly"],
   },
   {
-    title: "Cloud & Tools",
-    items: ["AWS", "Vercel", "Supabase", "Git", "Linux"],
+    title: "CRM & Ops",
+    items: ["HubSpot", "GoHighLevel", "Airtable", "Notion", "Pipedrive", "Google Sheets", "Gmail API", "Slack"],
   },
 ];
 
@@ -40,7 +40,7 @@ export function Skills() {
                 </h2>
               </div>
               <p className="max-w-md text-ink/80">
-                The stack I reach for, grouped by where it lives in the work.
+                My primary tool is n8n. Everything else connects to it.
               </p>
             </div>
 
@@ -76,4 +76,3 @@ export function Skills() {
     </section>
   );
 }
-

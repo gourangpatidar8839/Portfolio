@@ -8,19 +8,19 @@ type Stat = {
 
 const stats: Stat[] = [
   {
-    value: "2",
-    label: "Products shipped",
-    detail: "TheQuickAI and Lumira — both live in production.",
+    value: "167k+",
+    label: "Quizzes generated",
+    detail: "In 4 months. Students and teachers using it every day.",
   },
   {
-    value: "10k+",
-    label: "Creators using my work",
-    detail: "Across Lumira&rsquo;s India-first AI content studio.",
+    value: "11",
+    label: "Clients served",
+    detail: "Real clients, paid work. At The Quick AI automation agency.",
   },
   {
-    value: "500k+",
-    label: "AI generations served",
-    detail: "Images and videos produced through my systems to date.",
+    value: "322",
+    label: "Days to first profit",
+    detail: "From zero. No funding, no salary, no investor.",
   },
 ];
 
@@ -31,15 +31,14 @@ export function Stats() {
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <FadeIn className="md:col-span-5">
             <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
-              Why work with me
+              The numbers
             </p>
             <h2 className="headline mt-3 text-4xl md:text-5xl">
-              Engineering, not <em>experimentation theatre</em>.
+              From The Quick AI.
             </h2>
             <p className="mt-5 max-w-md text-ink/80">
-              I care about systems that survive contact with real users —
-              evals, latency budgets, cost ceilings, the boring parts that make
-              AI features actually ship.
+              These are the numbers from 16 months of building, pivoting,
+              serving real clients, and eventually shutting it down.
             </p>
           </FadeIn>
 
@@ -59,10 +58,7 @@ export function Stats() {
                 <div className="mt-2 text-sm font-bold uppercase tracking-tight text-ink/80">
                   {s.label}
                 </div>
-                <p
-                  className="mt-2 text-sm text-ink/70"
-                  dangerouslySetInnerHTML={{ __html: s.detail }}
-                />
+                <p className="mt-2 text-sm text-ink/70">{s.detail}</p>
               </StaggerItem>
             ))}
           </Stagger>
@@ -71,4 +67,3 @@ export function Stats() {
     </section>
   );
 }
-

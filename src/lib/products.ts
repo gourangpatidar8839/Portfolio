@@ -65,7 +65,7 @@ export const products: Product[] = [
       "For the quiz product we built support for five question types across multiple languages and education levels. For the automation agency we used n8n to build lead generation pipelines, CRM workflows, outbound sequences, and internal automation for our clients. Everything was built and delivered by three people.",
     tech: ["n8n", "OpenAI", "Python", "Django", "Google Sheets"],
     outcome:
-      "167,000 quizzes generated, 6,000 users, 11 clients served, profitable in 322 days with zero funding. We also competed during this time and reached the top rounds at IIT Bombay Eureka out of 25,000 teams, came top 13 at the M.P. government hackathon, and won Campus Tycoon at JEC.\n\nI shut it down in January 2026. When we got profitable I thought the signal was to expand into more services and more types of clients. Within a few months the product had no clear identity and we lost what had been working. I should have gone deeper instead of wider.\n\nI also went into this without any freelancing experience so I had no idea what client work actually costs from the inside. Not just money but time, communication overhead, and the energy it takes to manage people who are paying you. That was a big gap.\n\nThe hardest thing I learned was about validation. I spent months collecting feedback and everyone said the idea was great. That does not mean anything. The only real signal is when a stranger pays with their own money.",
+      "167,000 quizzes generated, 6,000 users, 11 clients served, profitable in 322 days with zero funding. Campus Tycoon at JEC: 1st place. IIT Bombay Eureka: top 150 out of 25,000 teams. M.P. Government Bundelkhand Hackathon: top 13 out of 600 teams. IIIT Nagpur Innovation Oasis: top 20 out of 400 startups. Shut down January 2026.\n\nWhen we got profitable I thought the signal was to expand into more services and more types of clients. Within a few months the product had no clear identity and we lost what had been working. I should have gone deeper instead of wider.\n\nI also went into this without any freelancing experience so I had no idea what client work actually costs from the inside. Not just money but time, communication overhead, and the energy it takes to manage people who are paying you. That was a big gap.\n\nThe hardest thing I learned was about validation. I spent months collecting feedback and everyone said the idea was great. That does not mean anything. The only real signal is when a stranger pays with their own money.",
   },
 ];
 
@@ -76,4 +76,3 @@ export function getFeaturedProducts(): Product[] {
 export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
-

@@ -14,16 +14,14 @@ export function Products() {
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-bold uppercase tracking-tight text-ink/60">
-                Products I&rsquo;ve shipped
+                Ventures
               </p>
               <h2 className="headline mt-3 text-4xl md:text-6xl">
-                Real businesses,
-                <br />
-                not just demos.
+                What I built.
               </h2>
               <p className="mt-4 max-w-xl text-ink/80">
-                Two AI products live in production, used by real customers —
-                both founded and engineered by me.
+                Lumira is running. The Quick AI I shut down after 16 months.
+                Both built from scratch with my co-founders.
               </p>
             </div>
             <Button href="/products" variant="ghost">

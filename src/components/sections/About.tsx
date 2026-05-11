@@ -11,25 +11,34 @@ export function About() {
             About
           </p>
           <h2 className="headline mt-4 text-4xl md:text-6xl">
-            I turn AI ideas into things people use.
+            Here&rsquo;s my story.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <div className="mt-8 space-y-5 text-lg text-ink/80">
+          <div className="mt-8 space-y-6 text-lg leading-relaxed text-ink/80">
             <p>
-              I&rsquo;m an AI/ML engineer focused on the messy gap between a
-              promising model and a product that actually ships. Most of my
-              work sits at the intersection of{" "}
-              <em>LLMs, retrieval, and real users</em>&nbsp;— RAG systems,
-              agents, evals, and the unglamorous plumbing that keeps them
-              reliable.
+              I grew up in a small village near Indore. About 100 people. In
+              college I chose AI when everyone around me was doing DSA and
+              people told me it would not lead to jobs.
             </p>
             <p>
-              Outside of building, I write about what I learn (in the blog
-              below), share resources I wish I&rsquo;d had earlier, and
-              collaborate with founders on small bets that punch above their
-              weight.
+              In 2024 I co-founded The Quick AI, built it for 16 months,
+              served 11 clients, became profitable with no funding, and then
+              shut it down. That whole experience is what shaped how I think
+              about building things. The full story is on the{" "}
+              <a
+                href="/products/thequickai"
+                className="font-bold underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-hover"
+              >
+                product page
+              </a>
+              .
             </p>
+            <p>
+              Now I work as an AI Engineer at IANMAN and I am building Lumira,
+              an India-first AI content studio that is live right now.
+            </p>
+            <p>I am 22 and still figuring things out.</p>
           </div>
         </FadeIn>
       </div>
@@ -37,4 +46,3 @@ export function About() {
     </section>
   );
 }
-

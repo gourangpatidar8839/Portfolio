@@ -16,7 +16,7 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
               </span>
-              Founder · TheQuickAI &amp; Lumira
+              AI Engineer &middot; Building Lumira
             </p>
           </FadeIn>
 
@@ -38,9 +38,9 @@ export function Hero() {
 
           <FadeIn onView={false} delay={0.25}>
             <p className="mt-6 max-w-xl text-lg text-ink/80 md:text-xl">
-              AI/ML engineer building intelligent systems with Python and LLMs.
-              Currently shipping <em>TheQuickAI</em> and <em>Lumira</em> — two
-              AI products live in production.
+              I co-founded a startup at 21. Ran it for 16 months. Shut it down.
+              Now I work as an AI Engineer at IANMAN and build Lumira, an
+              India-first AI content studio.
             </p>
           </FadeIn>
 

@@ -64,14 +64,22 @@ export function FeaturedProductCard({ product }: { product: Product }) {
         <span className="rounded-full bg-ink text-bg px-3 py-1 text-[11px] font-bold uppercase tracking-tight">
           {product.role}
         </span>
-        {product.tags.slice(0, 2).map((t) => (
-          <span
-            key={t}
-            className="rounded-full border border-ink/15 bg-bg/60 px-3 py-1 text-[11px] font-bold uppercase tracking-tight text-ink/70"
-          >
-            {t}
+        {product.shutDown && (
+          <span className="rounded-full border border-ink/25 bg-ink/8 px-3 py-1 text-[11px] font-bold uppercase tracking-tight text-ink/60">
+            Shut down
           </span>
-        ))}
+        )}
+        {product.tags
+          .filter((t) => t !== "Shut Down")
+          .slice(0, 2)
+          .map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-ink/15 bg-bg/60 px-3 py-1 text-[11px] font-bold uppercase tracking-tight text-ink/70"
+            >
+              {t}
+            </span>
+          ))}
       </div>
 
       <h3 className="headline mt-4 text-2xl md:text-3xl text-ink">
