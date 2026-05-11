@@ -46,3 +46,4 @@ export function GitHubIcon({ size = 16, ...props }: IconProps) {
     </svg>
   );
 }
+

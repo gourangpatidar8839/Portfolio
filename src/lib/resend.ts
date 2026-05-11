@@ -17,3 +17,4 @@ export const CONTACT_TO =
 // before you verify gourangpatidar.com in the Resend dashboard.
 export const CONTACT_FROM =
   process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>";
+

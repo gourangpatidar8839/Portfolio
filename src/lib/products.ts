@@ -76,3 +76,4 @@ export function getFeaturedProducts(): Product[] {
 export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
+

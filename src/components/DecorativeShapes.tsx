@@ -59,3 +59,4 @@ export function HandArrow({ className }: { className?: string }) {
     </svg>
   );
 }
+

@@ -26,3 +26,4 @@ export default async function Image({
     variant: "product",
   });
 }
+

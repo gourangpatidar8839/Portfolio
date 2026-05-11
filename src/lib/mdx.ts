@@ -55,3 +55,4 @@ export function getAllMDXPosts(): LoadedPost[] {
     .filter((p): p is LoadedPost => p !== null)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
 }
+

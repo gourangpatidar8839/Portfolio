@@ -23,3 +23,4 @@ export function RssIcon({
     </svg>
   );
 }
+

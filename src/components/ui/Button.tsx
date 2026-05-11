@@ -77,3 +77,4 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
     </button>
   );
 }
+

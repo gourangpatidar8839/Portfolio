@@ -74,3 +74,4 @@ export function CompactProjectCard({ project }: { project: Project }) {
     </Link>
   );
 }
+

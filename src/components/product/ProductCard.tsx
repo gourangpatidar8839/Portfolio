@@ -115,3 +115,4 @@ export function FeaturedProductCard({ product }: { product: Product }) {
     </article>
   );
 }
+
