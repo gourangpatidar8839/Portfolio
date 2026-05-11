@@ -13,60 +13,77 @@ export type Project = {
   outcome?: string;
 };
 
-// Replace these with your real projects. Schema mirrors src/content/projects/*.mdx frontmatter.
 export const projects: Project[] = [
   {
-    slug: "rag-knowledge-assistant",
-    title: "RAG Knowledge Assistant",
+    slug: "google-maps-lead-scraper",
+    title: "Google Maps Lead Scraper",
     summary:
-      "Production-grade retrieval-augmented Q&A over 10k+ internal documents. Cut answer time from minutes to seconds for a 50-person team.",
-    tags: ["LangChain", "Pgvector", "FastAPI"],
-    featured: true,
-    github: "https://github.com/GourangPatidar",
-    problem:
-      "Internal knowledge was buried across PDFs, Notion pages, and Slack threads. New hires spent days searching for answers that already existed somewhere.",
-    approach:
-      "Built a hybrid retrieval pipeline (BM25 + dense embeddings) with reranking, chunked documents semantically, and added a small evaluation harness so quality didn't silently regress with each model swap.",
-    tech: ["Python", "LangChain", "OpenAI", "Postgres + pgvector", "FastAPI", "Docker"],
-    outcome:
-      "Median answer latency under 2.5s. ~40% of common new-hire questions answered without human intervention.",
-  },
-  {
-    slug: "agentic-email-triage",
-    title: "Agentic Email Triage",
-    summary:
-      "An LLM agent that reads incoming email, classifies intent, drafts a reply, and learns from the user's edits.",
-    tags: ["Agents", "OpenAI", "Gmail API"],
+      "An n8n workflow that scrapes business leads from Google Maps without paying for any APIs. It pulls contact data and pushes it into Google Sheets automatically.",
+    tags: ["n8n", "Lead Gen"],
     featured: true,
     problem:
-      "Founders drown in email. Most replies are variations of the same 5 templates, but writing them still kills focus.",
+      "Most lead scraping tools charge per record or require paid API subscriptions. For early-stage founders trying to find their first customers, that cost adds up before they have even validated anything.",
     approach:
-      "Multi-step agent with tool use: classify intent → fetch relevant context → draft reply → wait for human approval. Logs every edit as a learning signal for future drafts.",
-    tech: ["Python", "OpenAI", "Gmail API", "SQLite", "Pydantic"],
+      "Built a fully automated n8n workflow that scrapes business listings from Google Maps using free methods, extracts name, address, phone, and website, deduplicates the results, and pushes everything into a Google Sheet ready to use.",
+    tech: ["n8n", "Google Sheets", "HTTP requests"],
     outcome:
-      "Reduced inbox time by ~60% in personal use. Currently testing with 3 friends as design partners.",
+      "A free lead pipeline any founder can set up in under 30 minutes. No API key, no billing, no dependencies.",
   },
   {
-    slug: "ml-experiment-tracker",
-    title: "Lightweight ML Experiment Tracker",
+    slug: "reddit-ai-agent",
+    title: "Reddit AI Agent",
     summary:
-      "A minimal alternative to Weights & Biases for solo researchers — local-first, single binary, no account.",
-    tags: ["MLOps", "Python", "SQLite"],
-    github: "https://github.com/GourangPatidar",
+      "An n8n agent that monitors target subreddits, finds relevant posts, and uses an LLM to suggest comments. Everything goes into Google Sheets for a human to review before posting.",
+    tags: ["n8n", "AI Agent"],
+    featured: true,
+    problem:
+      "Reddit is one of the best places to find qualified leads and genuine conversations but manually tracking subreddits and writing contextual replies every day is not sustainable.",
+    approach:
+      "Built an n8n workflow that monitors a list of subreddits on a schedule, feeds each post to an LLM with context about the business, gets a suggested comment back, and logs everything to Google Sheets. The human reviews and decides what to post.",
+    tech: ["n8n", "OpenAI", "Reddit API", "Google Sheets"],
+    outcome:
+      "Removes the manual work of monitoring Reddit entirely. The human-in-the-loop step keeps the quality high.",
   },
   {
-    slug: "llm-eval-harness",
-    title: "LLM Eval Harness",
+    slug: "whatsapp-rag-agent",
+    title: "WhatsApp AI Agent",
     summary:
-      "Reusable evaluation suite for RAG and agent pipelines — tracks accuracy, hallucination rate, and cost per task across model versions.",
-    tags: ["Evals", "Python", "LLM"],
+      "A WhatsApp bot connected to a custom knowledge base using RAG. Small businesses use it to answer customer questions automatically without needing to reply manually every time.",
+    tags: ["n8n", "RAG", "WhatsApp"],
+    problem:
+      "Small businesses get the same customer questions over and over on WhatsApp. Answering each one manually does not scale and generic chatbots do not know the business well enough to be useful.",
+    approach:
+      "Connected the WhatsApp Business API to an n8n workflow. Incoming messages trigger a retrieval pipeline that matches the question against a business-specific knowledge base and generates a reply. The owner only gets pulled in for things the bot cannot handle.",
+    tech: ["n8n", "OpenAI", "Pinecone", "WhatsApp Business API"],
+    outcome:
+      "Handles the most common customer queries automatically. Owners stop spending mornings answering the same ten questions.",
   },
   {
-    slug: "embedding-explorer",
-    title: "Embedding Explorer",
+    slug: "meeting-reminder-automation",
+    title: "Meeting Reminder Automation",
     summary:
-      "Interactive UI to visualize how documents cluster in embedding space. Useful for debugging RAG retrieval quality.",
-    tags: ["Visualization", "TypeScript", "UMAP"],
+      "An n8n workflow that reads your calendar and sends meeting reminders through WhatsApp or email with context from the event, so people actually show up on time.",
+    tags: ["n8n", "Automation"],
+    problem:
+      "People miss meetings or join late because they are deep in work and a calendar notification is easy to dismiss. A more direct reminder through the channel they actually check works better.",
+    approach:
+      "Built an n8n workflow that reads upcoming calendar events, pulls the attendees and agenda, and sends a personalised reminder 30 minutes and 5 minutes before via WhatsApp or email depending on preference.",
+    tech: ["n8n", "Google Calendar", "WhatsApp API", "Gmail API"],
+    outcome: "Takes about 20 minutes to set up and runs on its own after that.",
+  },
+  {
+    slug: "twitter-x-scraper",
+    title: "Twitter / X Scraper",
+    summary:
+      "An n8n automation that scrapes Twitter/X for target keywords or accounts, pulls post and engagement data, and saves it into a structured sheet for analysis or outreach.",
+    tags: ["n8n", "Twitter/X"],
+    problem:
+      "Tracking conversations on Twitter/X and finding the right people to reach out to requires either an expensive tool or a lot of manual scrolling.",
+    approach:
+      "Built a workflow that takes a list of keywords or accounts as input, queries Twitter/X through n8n, structures the output with engagement metrics and timestamps, and pushes it to Google Sheets.",
+    tech: ["n8n", "Twitter/X API", "Google Sheets"],
+    outcome:
+      "Clean, structured data from Twitter/X with no manual work and no expensive tool subscription.",
   },
 ];
 
